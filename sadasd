@@ -1,0 +1,38 @@
+   await driver.findElement(By.linkText("Войти")).click();
+    await driver
+      .findElement(By.xpath('//button[@data-name="SwitchToEmailAuthBtn"]'))
+      .click();
+    await driver
+      .findElement(By.xpath('//input[@name="username"]'))
+      .sendKeys("azazavox@gmail.com");
+    await driver.sleep(2000);
+    await driver
+      .findElement(By.xpath('//button[@data-name="ContinueAuthBtn"]'))
+      .click();
+    await driver
+      .findElement(By.xpath('//input[@name="password"]'))
+      .sendKeys("G9jrgS8m");
+    await driver
+      .findElement(By.xpath('//button[@data-name="ContinueAuthBtn"]'))
+      .click();
+    await driver.sleep(5000);
+    await driver.findElement(By.xpath('//a[@data-name="UserAvatar"]')).click();
+    await driver.sleep(7000);
+    await driver.findElement(By.linkText("Андрей Уханов")).click();
+
+Войти
+
+
+
+
+    const { Builder, Browser, By, Key, until } = require("selenium-webdriver");
+(async function example() {
+  let driver = await new Builder().forBrowser(Browser.EDGE).build();
+  try {
+    await driver.get("https://www.lada.ru/");
+    await driver.sleep(5000);
+    await driver.findElement(By.xpath('//svg[@viewBox="0 0 24 24"]')).click();
+  } finally {
+    await driver.quit();
+  }
+})();
